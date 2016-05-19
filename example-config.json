@@ -1,0 +1,8 @@
+{
+    "channels": ["stable", "beta"],
+    "filters": [
+        "+ coreos_production_pxe[._]*",
+        "+ coreos_developer_container[._]*",
+        "- *"
+    ]
+}
