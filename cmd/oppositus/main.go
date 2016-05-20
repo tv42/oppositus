@@ -11,7 +11,12 @@ import (
 
 	"eagain.net/go/oppositus"
 	"eagain.net/go/oppositus/internal/config"
+	"eagain.net/go/oppositus/internal/version"
 	"golang.org/x/net/context"
+)
+
+var (
+	showVersion = flag.Bool("version", false, "display version and exit")
 )
 
 func doit(configPath string, dest string) error {
@@ -69,6 +74,11 @@ func main() {
 
 	flag.Usage = usage
 	flag.Parse()
+
+	if *showVersion {
+		fmt.Printf("%s %s\n", prog, version.Version)
+		os.Exit(0)
+	}
 	if flag.NArg() != 2 {
 		flag.Usage()
 		os.Exit(2)
