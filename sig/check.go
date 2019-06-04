@@ -12,7 +12,7 @@ import (
 //
 //     curl -o coreosKey.asc https://coreos.com/security/image-signing-key/CoreOS_Image_Signing_Key.asc
 
-//go:generate go run ../task/asset.go coreosKey.asc
+//go:generate go run github.com/tv42/becky coreosKey.asc
 
 func asc(a asset) openpgp.KeyRing {
 	keyring, err := openpgp.ReadArmoredKeyRing(strings.NewReader(a.Content))

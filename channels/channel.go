@@ -1,7 +1,7 @@
 package channels
 
-//go:generate jsonenums -type=Channel
-//go:generate stringer -type=Channel
+//go:generate go run github.com/campoy/jsonenums -type=Channel
+//go:generate go run golang.org/x/tools/cmd/stringer -type=Channel
 
 // Channel represents a CoreOS release channel.
 type Channel int
